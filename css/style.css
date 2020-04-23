@@ -95,7 +95,7 @@ a {
   left: 0;
   top: 0;
 }
-.slider-controls {
+.slider-controls, .slider-heading-box {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -106,9 +106,11 @@ a {
   font-family: "Roboto";
   color: rgb(255, 255, 255);
   text-transform: uppercase;
-  line-height: 80px;
+  line-height: 60px;
   text-align: left;
   padding-left: 184px;
+  margin-bottom: 28px;
+  /* margin-top: -22px; */
 }
 .slider:hover span {
   color: rgb(255, 114, 0);
@@ -116,7 +118,7 @@ a {
 }
 .slider-text{
   display: block;
-  font-size: 20px;
+  font-size: 24px;
   font-family: "Roboto";
   color: rgb(255, 255, 255);
   text-transform: uppercase;
@@ -175,6 +177,7 @@ a {
   width: 255px;
   height: 322px;
   margin-right: 30px;
+  /* margin-right: 29.37px;*/ /*- для масштабування 25%, 75%, 125% */
   position: relative;
 }
 .product-card:nth-of-type(4n) {
@@ -285,11 +288,7 @@ a {
 a.footer {
   color: rgb(26, 188, 156);
 }
-
-
-/* .product-name:focus 
-.product-name
-.product-name:focus .price 
-{
-  background-color: rgb(26, 188, 156);
+/* 
+.product-name a:focus {
+  color: rgb(26, 188, 156);
 } */
