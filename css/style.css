@@ -37,7 +37,7 @@ a {
   padding-top: 32px;
   height: 90px;
 }
-.logo {
+.logo a{
   float: left;
   font-size: 30px;
   font-family: "Roboto", sans-serif;
@@ -46,7 +46,7 @@ a {
   line-height: 32px;
   font-weight: 300;
 }
-.logo:first-letter {
+.logo a:first-letter {
   color: rgb(26, 188, 156);
   font-weight: bold;
 }
@@ -77,11 +77,15 @@ a {
   color: rgb(26, 188, 156);
 }
 /* SLIDER */
-
-.slider{
+.slider {
   height: 600px;
   background-color: rgb(50, 50, 50);
   position: relative;
+}
+.slider-photo{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .slider-overlay {  
   background-color: rgba(0, 0, 2, .5);
@@ -97,16 +101,6 @@ a {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.slider-photo{
-  height: 100%;
-  width: 100%;
-  background-position: center;
-  background-size: contain;
-  object-fit: cover;
-  filter: brightness(52%);
-}
-
-
 .slider-heading {
   font-size: 60px;
   font-family: "Roboto";
@@ -115,10 +109,10 @@ a {
   line-height: 80px;
   text-align: left;
   padding-left: 184px;
-
 }
 .slider:hover span {
   color: rgb(255, 114, 0);
+  transition: .5s;
 }
 .slider-text{
   display: block;
@@ -129,16 +123,14 @@ a {
   line-height: 24px;
   text-align: left;
   padding-left: 184px;
-
 }
-
 .slider-button{
   width: 104px;height: 104px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(78, 198, 171, .65);
   border: none;
- }
+}
 .button-left{
   float: left;
   background-image: url(../img/button-left.png);
@@ -147,10 +139,11 @@ a {
   float: right;
   background-image: url(../img/button-right.png);
 }
- .slider-button:hover{
+.slider-button:hover,
+.slider-button:focus {
   background-color: rgb(26, 188, 156);
+  transition: .5s;
 }
-
 /* MAIN */
 .main-content {
   background-color: rgb(233, 240, 253);
@@ -186,10 +179,6 @@ a {
 }
 .product-card:nth-of-type(4n) {
   margin-right: 0;
-}
-.product-card:hover .product-name,
-.product-card:hover .price {
-  background-color: rgb(26, 188, 156);
 }
 .overlay{
   display: none;
@@ -254,14 +243,27 @@ a {
     background-color: rgb(26, 188, 156);
 }
 .product-name {
-  float: left;
   background-color: rgb(50, 50, 50);
-  width: 200px;
+  width: 255px;
   padding-left: 14px;
 }
+.product-card:hover .product-name{
+  background-color: rgb(26, 188, 156);
+}
+.product-name a {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}
 .price {
-  float: left;
-  width: 55px;
+  float: right;
+  padding: 0 12px;
+  height: 40px;
   line-height: 40px;
   text-align: center;
   font-size: 18px;
@@ -269,16 +271,7 @@ a {
   font-weight: 900;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
-  background-color: rgb(50, 50, 50);
-  opacity: 0.439;
-}
-.product-name a {
-  font-size: 18px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  color: rgb(255, 255, 255);
-  text-transform: uppercase;
-  line-height: 40px;
+  background-color: rgba(255, 255, 255, .44);
 }
 /* FOOTER */
 .footer {
@@ -292,3 +285,11 @@ a {
 a.footer {
   color: rgb(26, 188, 156);
 }
+
+
+/* .product-name:focus 
+.product-name
+.product-name:focus .price 
+{
+  background-color: rgb(26, 188, 156);
+} */
