@@ -101,30 +101,28 @@ a {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+.slider-heading-box {
+  width: 800px;
+  margin: 0 auto;
+}
 .slider-heading {
   font-size: 60px;
   font-family: "Roboto";
   color: rgb(255, 255, 255);
   text-transform: uppercase;
   line-height: 60px;
-  text-align: left;
-  padding-left: 184px;
   margin-bottom: 28px;
-  /* margin-top: -22px; */
 }
 .slider:hover span {
   color: rgb(255, 114, 0);
   transition: .5s;
 }
 .slider-text{
-  display: block;
   font-size: 24px;
   font-family: "Roboto";
   color: rgb(255, 255, 255);
   text-transform: uppercase;
   line-height: 24px;
-  text-align: left;
-  padding-left: 184px;
 }
 .slider-button{
   width: 104px;height: 104px;
@@ -132,6 +130,7 @@ a {
   background-position: center;
   background-color: rgba(78, 198, 171, .65);
   border: none;
+  cursor: pointer;
 }
 .button-left{
   float: left;
@@ -184,7 +183,6 @@ a {
   margin-right: 0;
 }
 .overlay{
-  display: none;
   width: 255px;
   height: 282px;
   background-color: rgba(0,0,0,.5);
@@ -193,12 +191,17 @@ a {
   position: absolute;
   left: 0;
   top: 0;
+  /* display: none; */
+  opacity: 0;
 }
 .product-card:hover .overlay{
-  display: block;
+  /* display: block; */
+  opacity: .8;
+
 }
-.button-wrapper{
-  /* width: 170px; */
+.button-wrapper {
+  width: 170px;
+  height: 110px;
   font-size: 0;
   position: absolute;
   left: 50%;
@@ -206,27 +209,30 @@ a {
   transform: translate(-50%, -50%);
 }
 .button {
-  width: 50px;
+  position: absolute;
+  width: 50px;  
   height: 50px;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
-  margin-right: 10px;
-  margin-bottom: 10px;
   border: 1px solid rgb(255,255,255);
   cursor: pointer;
 }
 .button-1 {
+  left: 0;
   background-image: url(../img/1-like.png);
 }
 .button-2 {
+  left: 50%;
+  transform: translateX(-50%);
   background-image: url(../img/2-cmpr.png);
 }
 .button-3 {
+  right: 0;
   background-image: url(../img/3-time.png);
-  margin-right: 0;
 }
 .button-4{
+  bottom: 0;
   width: 170px;
   /* line-height: 50px; */
   font-size: 14px;
@@ -239,11 +245,24 @@ a {
   padding-left: 60px;
   background-image: url(../img/4-add.png);
   background-position: left 12px center;
-  margin: 0;
 }
 .button:hover {
     border: 1px solid rgb(26, 188, 156);
     background-color: rgb(26, 188, 156);
+}
+.visually-hidden:not(:focus):not(:active),
+input[type='checkbox'].visually-hidden,
+input[type='radio'].visually-hidden {
+position: absolute;;
+width: 1px;
+height: 1px;
+margin: -1px;
+border: 0;
+padding: 0;
+white-space: nowrap;
+clip-path: inset(100%);
+clip: rect(0 0 0 0);
+overflow: hidden;
 }
 .product-name {
   background-color: rgb(50, 50, 50);
@@ -288,7 +307,7 @@ a {
 a.footer {
   color: rgb(26, 188, 156);
 }
-/* 
-.product-name a:focus {
-  color: rgb(26, 188, 156);
-} */
+
+/* .product-name a:focus {
+  background-color: rgb(26, 188, 156);
+} */ /* = чомусь при фокусі не виходить реалізувати такі ж зміни, як при ховері*/
